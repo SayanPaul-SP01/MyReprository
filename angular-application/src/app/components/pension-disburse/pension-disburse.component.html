@@ -1,0 +1,44 @@
+<div class="bootstrap-wrapper">
+  <div class="container mt">
+      <div class="row">
+          <div class="col-md-6 offset-md-3">
+              <h1 class="text-center">Disburse Pension</h1>
+              <form (ngSubmit)="onSubmit()">
+                  <div class="full-width">
+                      <!-- <mat-label>Aadhaar Number</mat-label> -->
+                      <input required [(ngModel)]="credentials.aadhaarNumber" name="aadhaarNumber"
+                      type="text" placeholder="Aadhaar Number*" #control1="ngModel" matInput/>
+                      <mat-error *ngIf="control1.invalid && control1.invalid">  
+                          <div *ngIf="control1.errors?.['required']">Aadhaar number is required</div>  
+                      </mat-error> 
+                  </div>
+                  <div class="full-width">
+                      <!-- <mat-label>Pension Amount</mat-label> -->
+                      <input required [(ngModel)]="credentials.pensionAmount" name="pensionAmount"
+                      type="number" placeholder="Pension Amount*" #control1="ngModel" matInput/>
+                      <mat-error *ngIf="control1.invalid && control1.invalid">  
+                          <div *ngIf="control1.errors?.['required']">Pension amount is required</div>  
+                      </mat-error> 
+                  </div>
+                  <div class="full-width">
+                      <!-- <mat-label>Bank Charge</mat-label> -->
+                      <input required [(ngModel)]="credentials.bankServiceCharge" name="bankServiceCharge"
+                      type="number" placeholder="Bank Charge*" #control1="ngModel" matInput/>
+                      <mat-error *ngIf="control1.invalid && control1.invalid">  
+                          <div *ngIf="control1.errors?.['required']">Bank charge is required</div>  
+                      </mat-error> 
+                  </div>
+                  <br>
+                  <br>
+                  <div class="container text-center">
+                      <button type="submit" mat-raised-button color="primary">Disburse Pension</button>
+                      <button type="reset" mat-raised-button color="accent" style="margin-left: 10px;">Reset</button>
+                      
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+
+</div>
+
